@@ -1,11 +1,7 @@
 <template>
   <div>
-    <label>
-      {{ CurrentAppVersion }}
-    </label>
-    <a v-on:click="CheckUpdate()">
-      check updates
-    </a>
+    <label>{{ CurrentAppVersion }}</label>
+    <a v-on:click="CheckUpdate()">check updates</a>
     <br />
     <br />
     <label>{{ H1z1ServerVersion }}</label>
@@ -20,7 +16,7 @@ const H1z1ServerVersion = ProjectSetting.dependencies["h1z1-server"];
 @Component
 export default class LoginServer extends Vue {
   private CheckUpdate() {
-    window.open("https://github.com/QuentinGruber/h1z1-server-app/release");
+    window.open("https://github.com/QuentinGruber/h1z1-server-app/releases");
   }
   data() {
     return {
