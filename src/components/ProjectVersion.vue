@@ -29,13 +29,13 @@ export default class LoginServer extends Vue {
 <style scoped>
 .ProjectVersion {
   position: fixed;
-  bottom: 0;
-  left: 80;
+  bottom: 1%;
+  left: 49%;
 }
 
 .AppVersion {
   left: 0;
   position: fixed;
-  bottom: 0;
+  bottom: 1%;
 }
 </style>

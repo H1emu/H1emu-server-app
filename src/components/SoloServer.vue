@@ -1,9 +1,13 @@
 <template>
   <div class="SoloServer">
-    <button v-if="store.state.SoloServerLaunched" v-on:click="StopSoloServer()">
+    <v-btn
+      outline
+      v-if="store.state.SoloServerLaunched"
+      v-on:click="StopSoloServer()"
+    >
       Stop SoloServer
-    </button>
-    <button v-else v-on:click="LaunchSoloServer()">Launch SoloServer</button>
+    </v-btn>
+    <v-btn v-else v-on:click="LaunchSoloServer()">Launch SoloServer</v-btn>
   </div>
 </template>
 
@@ -19,6 +23,7 @@ export default class SoloServer extends Vue {
     };
   }
   private LaunchSoloServer() {
+    alert("dd");
     SoloServerWorker = new Worker("../servers/SoloServer.js");
     store.commit("SoloServerToggle");
   }

@@ -20,6 +20,7 @@ function createWindow() {
     width: 400,
     height: 400,
     resizable: false,
+    frame: false,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
       // See nklayman.github.io/vue-cli-plugin-electron-builder/guide/security.html#node-integration for more info
@@ -28,7 +29,7 @@ function createWindow() {
       nodeIntegrationInWorker: true,
     },
   });
-  //win.setMenu(null);
+  win.setMenu(null);
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string);
