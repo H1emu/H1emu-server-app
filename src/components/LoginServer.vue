@@ -1,5 +1,5 @@
 <template>
-  <div id="LoginServer">
+  <div class="LoginServer">
     <h1>LoginServer</h1>
     <label>server port :</label>
     <input type="text" id="ServerPort_LoginServer" />
@@ -29,20 +29,18 @@ export default class LoginServer extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#LoginServer {
-}
-h3 {
+.LoginServer h3 {
   margin: 40px 0 0;
 }
-ul {
+.LoginServer ul {
   list-style-type: none;
   padding: 0;
 }
-li {
+.LoginServer li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+.LoginServer a {
   color: #42b983;
 }
 </style>

@@ -17,8 +17,8 @@ protocol.registerSchemesAsPrivileged([
 function createWindow() {
   // Create the browser window.
   win = new BrowserWindow({
-    width: 300,
-    height: 300,
+    width: 400,
+    height: 400,
     resizable: false,
     webPreferences: {
       // Use pluginOptions.nodeIntegration, leave this alone
@@ -28,7 +28,7 @@ function createWindow() {
       nodeIntegrationInWorker: true,
     },
   });
-  win.setMenu(null);
+  //win.setMenu(null);
   if (process.env.WEBPACK_DEV_SERVER_URL) {
     // Load the url of the dev server if in development mode
     win.loadURL(process.env.WEBPACK_DEV_SERVER_URL as string);

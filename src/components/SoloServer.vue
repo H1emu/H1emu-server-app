@@ -1,9 +1,5 @@
 <template>
-  <div id="SoloServer">
-    <h1>Solo Server</h1>
-    <label>server port :</label>
-    <input type="text" id="ServerPort_SoloServer" value="1115" readonly />
-    <br />
+  <div class="SoloServer">
     <button v-if="store.state.SoloServerLaunched" v-on:click="StopSoloServer()">
       Stop SoloServer
     </button>
@@ -35,21 +31,21 @@ export default class SoloServer extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#SoloServer {
+.SoloServer {
   margin: 10;
 }
-h3 {
+.SoloServer h3 {
   margin: 40px 0 0;
 }
-ul {
+.SoloServer ul {
   list-style-type: none;
   padding: 0;
 }
-li {
+.SoloServer li {
   display: inline-block;
   margin: 0 10px;
 }
-a {
+.SoloServer a {
   color: #42b983;
 }
 </style>

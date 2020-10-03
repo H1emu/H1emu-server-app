@@ -1,10 +1,8 @@
 <template>
   <div>
-    <label>{{ CurrentAppVersion }}</label>
-    <a v-on:click="CheckUpdate()">check updates</a>
-    <br />
-    <br />
-    <label>{{ H1z1ServerVersion }}</label>
+    <label class="AppVersion">{{ CurrentAppVersion }}</label>
+    <!--  <a v-on:click="CheckUpdate()">check updates</a> -->
+    <label class="ProjectVersion">{{ H1z1ServerVersion }}</label>
   </div>
 </template>
 
@@ -21,7 +19,7 @@ export default class LoginServer extends Vue {
   data() {
     return {
       CurrentAppVersion: "App version : " + CurrentAppVersion,
-      H1z1ServerVersion: "Used h1z1-server version : " + H1z1ServerVersion,
+      H1z1ServerVersion: "H1z1-server version : " + H1z1ServerVersion,
     };
   }
 }
@@ -29,21 +27,15 @@ export default class LoginServer extends Vue {
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-#SoloServer {
-  margin: 10;
+.ProjectVersion {
+  position: fixed;
+  bottom: 0;
+  left: 80;
 }
-h3 {
-  margin: 40px 0 0;
-}
-ul {
-  list-style-type: none;
-  padding: 0;
-}
-li {
-  display: inline-block;
-  margin: 0 10px;
-}
-a {
-  color: #42b983;
+
+.AppVersion {
+  left: 0;
+  position: fixed;
+  bottom: 0;
 }
 </style>
