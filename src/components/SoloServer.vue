@@ -37,7 +37,7 @@ export default class SoloServer extends Vue {
 <!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
 .SoloServer {
-  padding-top: 60px;
+  padding-top: 10px;
 }
 .SoloServer h3 {
   margin: 40px 0 0;

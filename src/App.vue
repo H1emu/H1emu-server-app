@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <TitleBar />
+    <br />
+    <InstallPatch />
     <SoloServer />
     <ProjectVersion />
   </div>
@@ -11,12 +13,14 @@ import { Component, Vue } from "vue-property-decorator";
 import SoloServer from "./components/SoloServer.vue";
 import ProjectVersion from "./components/ProjectVersion.vue";
 import TitleBar from "./components/TitleBar.vue";
+import InstallPatch from "./components/InstallPatch.vue";
 
 @Component({
   components: {
     SoloServer,
     ProjectVersion,
     TitleBar,
+    InstallPatch,
   },
 })
 export default class App extends Vue {}
