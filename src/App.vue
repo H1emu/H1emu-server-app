@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <TitleBar />
     <SoloServer />
     <ProjectVersion />
   </div>
@@ -9,11 +10,13 @@
 import { Component, Vue } from "vue-property-decorator";
 import SoloServer from "./components/SoloServer.vue";
 import ProjectVersion from "./components/ProjectVersion.vue";
+import TitleBar from "./components/TitleBar.vue";
 
 @Component({
   components: {
     SoloServer,
     ProjectVersion,
+    TitleBar,
   },
 })
 export default class App extends Vue {}
@@ -26,7 +29,6 @@ export default class App extends Vue {}
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 ::-webkit-scrollbar {
   display: none;
