@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace H1Z1_server.Properties
+namespace H1Z1_NewHope.Properties
 {
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
@@ -45,7 +45,7 @@ namespace H1Z1_server.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("H1Z1_server.Properties.Resources",
+                        new global::System.Resources.ResourceManager("H1Z1_NewHope.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

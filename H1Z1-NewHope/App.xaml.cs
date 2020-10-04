@@ -1,4 +1,4 @@
-﻿namespace H1Z1_server
+﻿namespace H1Z1_NewHope
 {
     /// <summary>
     /// Interaction logic for App.xaml
