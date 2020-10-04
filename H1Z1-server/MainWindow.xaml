@@ -1,0 +1,14 @@
+﻿<Window x:Class="H1Z1_server.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:H1Z1_server"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="350" Width="525">
+    <StackPanel>
+        <Button Click="UpdtServer_OnClick">Update h1z1-server</Button>
+        <Button Click="LaunchServer_OnClick">launch loginServer</Button>
+        <Button Click="InstallServer_OnClick">Install Server files</Button>
+    </StackPanel>
+</Window>

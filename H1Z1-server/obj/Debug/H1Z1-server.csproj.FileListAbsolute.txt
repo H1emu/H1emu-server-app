@@ -1,0 +1,15 @@
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\bin\Debug\H1Z1_server.exe.config
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\bin\Debug\H1Z1_server.exe
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\bin\Debug\H1Z1_server.pdb
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1-server.csprojAssemblyReference.cache
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\MainWindow.g.cs
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\App.g.cs
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1_server_MarkupCompile.cache
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1_server_MarkupCompile.lref
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\MainWindow.baml
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1_server.g.resources
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1_server.Properties.Resources.resources
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1-server.csproj.GenerateResource.cache
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1-server.csproj.CoreCompileInputs.cache
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1_server.exe
+C:\Users\Quentin\RiderProjects\H1Z1-server\H1Z1-server\obj\Debug\H1Z1_server.pdb
