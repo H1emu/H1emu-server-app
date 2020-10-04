@@ -6,8 +6,8 @@
         <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
         <ProjectGuid>{83BF2E73-7911-45A9-8A03-93C825149D94}</ProjectGuid>
         <OutputType>WinExe</OutputType>
-        <RootNamespace>H1Z1_server</RootNamespace>
-        <AssemblyName>H1Z1_server</AssemblyName>
+        <RootNamespace>H1Z1-NewHope</RootNamespace>
+        <AssemblyName>H1Z1-NewHope</AssemblyName>
         <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
         <FileAlignment>512</FileAlignment>
         <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
