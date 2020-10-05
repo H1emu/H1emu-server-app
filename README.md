@@ -1,4 +1,5 @@
 # h1z1-server-app
+## h1z1-server [![npm version](http://img.shields.io/npm/v/h1z1-server.svg?style=flat)](https://npmjs.org/package/h1z1-server "View this project on npm")
 
 ## Important Downloads:
 1. Make sure you have GIT downloaded. If not, you can do it here: https://git-scm.com/downloads.
