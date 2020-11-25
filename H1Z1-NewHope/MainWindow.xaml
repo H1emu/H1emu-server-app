@@ -9,8 +9,8 @@
         Title="H1Z1-NewHope v0.1.0" Height="350" Width="525">
     <Grid  Background="#152951">
         <StackPanel  Margin="0,250,0,0" VerticalAlignment="Center">
-            <TextBlock Foreground="White" FontSize="25" Text="H1Z1-NewHope"/>
-            <TextBlock Foreground="White" FontSize="10" Text="Join the community at discord.gg/RM6jNkj"/>
+            <TextBlock Foreground="White" FontSize="25" Text="H1emu"/>
+            <TextBlock Foreground="White" FontSize="10" Text="Join the community at H1emu.com"/>
             <TextBlock Margin="365,0,0,0" Foreground="White" FontSize="9" Text="Copyright (C) 2020  Quentin Gruber"/>
         </StackPanel>
         <StackPanel Margin="0,40,0,0" HorizontalAlignment="Center">

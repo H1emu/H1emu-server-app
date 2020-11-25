@@ -71,7 +71,7 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("git clone https://github.com/QuentinGruber/h1z1-server-QuickStart.git");
+                    sw.WriteLine("git clone https://github.com/H1emu/h1z1-server-QuickStart.git");
                     sw.WriteLine("cd h1z1-server-QuickStart/");
                     sw.WriteLine("npm ci");
                 }
