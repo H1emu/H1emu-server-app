@@ -45,7 +45,7 @@ namespace H1Z1_NewHope.Properties
                 if ((resourceMan == null))
                 {
                     global::System.Resources.ResourceManager temp =
-                        new global::System.Resources.ResourceManager("H1Z1_NewHope.Properties.Resources",
+                        new global::System.Resources.ResourceManager("H1emu.Properties.Resources",
                             typeof(Resources).Assembly);
                     resourceMan = temp;
                 }

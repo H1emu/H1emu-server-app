@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:H1Z1_server"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="H1Z1-NewHope v0.1.0" Height="350" Width="525">
+        Title="H1emu v0.2.0" Height="350" Width="525">
     <Grid  Background="#152951">
         <StackPanel  Margin="0,250,0,0" VerticalAlignment="Center">
             <TextBlock Foreground="White" FontSize="25" Text="H1emu"/>

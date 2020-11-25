@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1Z1-NewHope", "H1Z1-NewHope\H1Z1-NewHope.csproj", "{3593D7AC-F0C0-452F-A069-785FFE27808D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "H1emu", "H1emu\H1emu.csproj", "{3593D7AC-F0C0-452F-A069-785FFE27808D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
