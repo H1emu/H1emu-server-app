@@ -6,17 +6,22 @@
         xmlns:local="clr-namespace:H1Z1_server"
         mc:Ignorable="d"
         ResizeMode="NoResize"
-        Title="H1emu v0.2.0" Height="350" Width="525">
+        Title="H1emu v0.3.0" Height="350" Width="525">
     <Grid  Background="#152951">
         <StackPanel  Margin="0,250,0,0" VerticalAlignment="Center">
             <TextBlock Foreground="White" FontSize="25" Text="H1emu"/>
             <TextBlock Foreground="White" FontSize="10" Text="Join the community at H1emu.com"/>
             <TextBlock Margin="365,0,0,0" Foreground="White" FontSize="9" Text="Copyright (C) 2020  Quentin Gruber"/>
         </StackPanel>
-        <StackPanel Margin="0,40,0,0" HorizontalAlignment="Center">
-            <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="InstallServer_OnClick">Install Servers files</Button>
-            <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="LaunchServer_OnClick">launch Solo Server</Button>
-            <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="UpdtServer_OnClick">Update Servers files</Button>
+            <StackPanel Margin="50,0,300,0">
+                <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="InstallNodejs_OnClick">Install Nodejs</Button>
+                <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="InstallServer_OnClick">Install Servers files</Button>
+                <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="UpdtServer_OnClick">Update Servers files</Button>
+            </StackPanel>
+        <StackPanel Margin="300,0,50,0">
+            <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="LaunchServer_OnClick">Launch Solo Server</Button>
+            <Button FontSize="18" Width="160" Height="40" Margin="0,20,0,0" Click="LaunchH1Z1_OnClick">Launch H1Z1.exe</Button>
         </StackPanel>
+
     </Grid>
 </Window>

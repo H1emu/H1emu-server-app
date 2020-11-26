@@ -14,7 +14,7 @@ namespace H1Z1_server
             InitializeComponent();
         }
 
-        private string ServerFilesPath = "./ServerFiles/h1z1-server-QuickStart-master";
+        private string ServerFilesPath = "./H1emuServersFiles/h1z1-server-QuickStart-master";
         private string ServerFilesRepo = "https://github.com/H1emu/h1z1-server-QuickStart/archive/master.zip";
 
         private void LaunchServer_OnClick(object sender, RoutedEventArgs e)
@@ -34,6 +34,48 @@ namespace H1Z1_server
                 {
                     sw.WriteLine("cd "+ServerFilesPath);
                     sw.WriteLine("npm start");
+                }
+            }
+        }
+        
+        private void InstallNodejs_OnClick(object sender, RoutedEventArgs e)
+        {
+            Process p = new Process();
+            ProcessStartInfo info = new ProcessStartInfo();
+            info.FileName = "cmd.exe";
+            info.RedirectStandardInput = true;
+            info.UseShellExecute = false;
+
+            p.StartInfo = info;
+            p.Start();
+
+            using (StreamWriter sw = p.StandardInput)
+            {
+                if (sw.BaseStream.CanWrite)
+                {
+                    sw.WriteLine("cd /temp");
+                    sw.WriteLine("curl -LJO https://nodejs.org/dist/v14.15.1/node-v14.15.1-x64.msi");
+                    sw.WriteLine("node-v14.15.1-x64.msi");
+                }
+            }
+        }
+        
+        private void LaunchH1Z1_OnClick(object sender, RoutedEventArgs e)
+        {
+            Process p = new Process();
+            ProcessStartInfo info = new ProcessStartInfo();
+            info.FileName = "cmd.exe";
+            info.RedirectStandardInput = true;
+            info.UseShellExecute = false;
+
+            p.StartInfo = info;
+            p.Start();
+
+            using (StreamWriter sw = p.StandardInput)
+            {
+                if (sw.BaseStream.CanWrite)
+                {
+                    sw.WriteLine("H1Z1.exe sessionid=115 server=localhost:1115");
                 }
             }
         }
@@ -81,6 +123,7 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
+                    sw.WriteLine("rd /s /q H1emuServersFiles");
                     sw.WriteLine("curl -LJO "+ServerFilesRepo);
                    
                 }
@@ -93,7 +136,7 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("Expand-Archive h1z1-server-QuickStart-master.zip ServerFiles");
+                    sw.WriteLine("Expand-Archive h1z1-server-QuickStart-master.zip H1emuServersFiles");
                 }
             }
             p2.WaitForExit();
