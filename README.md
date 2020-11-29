@@ -1,6 +1,9 @@
 # h1z1-server-app
 ## h1z1-server [![npm version](http://img.shields.io/npm/v/h1z1-server.svg?style=flat)](https://npmjs.org/package/h1z1-server "View this project on npm")
 
+**Thanks to ZamZam for the design of the app** 
+
+
 ## How to run the file:
 1. Download the lastest version of the app here https://github.com/H1emu/H1emu-server-app/releases .
 2. Put H1emu.exe inside your H1z1 game folder.
