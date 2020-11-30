@@ -54,7 +54,7 @@ namespace H1Z1_server
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("cd /temp");
-                    sw.WriteLine("curl -LJO https://nodejs.org/dist/v14.15.1/node-v14.15.1-x64.msi");
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output h1z1-server-QuickStart-master.zip https://nodejs.org/dist/v14.15.1/node-v14.15.1-x64.msi");
                     sw.WriteLine("node-v14.15.1-x64.msi");
                 }
             }
