@@ -59,6 +59,31 @@ namespace H1Z1_server
                 }
             }
         }
+
+        private void ApplyPatch_OnClick(object sender, RoutedEventArgs e)
+        {
+            Process p = new Process();
+            ProcessStartInfo info = new ProcessStartInfo();
+            info.FileName = "cmd.exe";
+            info.RedirectStandardInput = true;
+            info.UseShellExecute = false;
+
+            p.StartInfo = info;
+            p.Start();
+
+            using (StreamWriter sw = p.StandardInput)
+            {
+                if (sw.BaseStream.CanWrite)
+                {
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output dinput8.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/dinput8.dll");
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output msvcp140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/msvcp140d.dll");
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output ucrtbased.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/ucrtbased.dll");
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140_1d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140_1d.dll");
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140d.dll");
+                }
+            }
+        }
+
         
         private void LaunchH1Z1_OnClick(object sender, RoutedEventArgs e)
         {
@@ -124,7 +149,7 @@ namespace H1Z1_server
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("rd /s /q H1emuServersFiles");
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output h1z1-server-QuickStart-master.zip " + ServerFilesRepo);
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output patch.zip " + ServerFilesRepo);
                    
                 }
             }
