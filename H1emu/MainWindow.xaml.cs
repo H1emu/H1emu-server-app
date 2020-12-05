@@ -1,4 +1,5 @@
-﻿using System.Diagnostics;
+﻿using System;
+using System.Diagnostics;
 using System.IO;
 using System.Windows;
 
@@ -75,11 +76,11 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output dinput8.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/dinput8.dll");
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output msvcp140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/msvcp140d.dll");
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output ucrtbased.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/ucrtbased.dll");
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140_1d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140_1d.dll");
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140d.dll");
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output dinput8.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/dinput8.dll?"+ new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output msvcp140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/msvcp140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output ucrtbased.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/ucrtbased.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140_1d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140_1d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
                 }
             }
         }
@@ -149,8 +150,9 @@ namespace H1Z1_server
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("rd /s /q H1emuServersFiles");
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output patch.zip " + ServerFilesRepo);
-                   
+                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output h1z1-server-QuickStart-master.zip " + ServerFilesRepo +"?"+ new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+
+
                 }
             }
             p1.WaitForExit();
