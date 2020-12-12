@@ -87,5 +87,9 @@
   <ItemGroup>
     <Resource Include="img\EmuIco_By_ZamZam.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="img\Background_By_ZamZam.jpg" />
+    <Resource Include="img\H1Emu_Logo_By_ZamZam.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
