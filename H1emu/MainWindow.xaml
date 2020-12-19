@@ -5,11 +5,11 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:H1Z1_server"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="H1emu v1.2.0"
+    Title="H1emu v1.2.1"
     Width="800"
     Height="550"
     Icon="img/EmuIco_By_ZamZam.ico"
-    ResizeMode="NoResize"
+    ResizeMode="CanMinimize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
 
