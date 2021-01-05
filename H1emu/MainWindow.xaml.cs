@@ -33,12 +33,12 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("cd "+ServerFilesPath);
+                    sw.WriteLine("cd " + ServerFilesPath);
                     sw.WriteLine("npm start");
                 }
             }
         }
-        
+
         private void InstallNodejs_OnClick(object sender, RoutedEventArgs e)
         {
             Process p = new Process();
@@ -76,16 +76,16 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output dinput8.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/dinput8.dll?"+ new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output msvcp140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/msvcp140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output ucrtbased.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/ucrtbased.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140_1d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140_1d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output vcruntime140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl --output dinput8.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/dinput8.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl --output msvcp140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/msvcp140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl --output ucrtbased.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/ucrtbased.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl --output vcruntime140_1d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140_1d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl --output vcruntime140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patch/vcruntime140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
                 }
             }
         }
 
-        
+
         private void LaunchH1Z1_OnClick(object sender, RoutedEventArgs e)
         {
             Process p = new Process();
@@ -121,22 +121,22 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("cd "+ServerFilesPath);
+                    sw.WriteLine("cd " + ServerFilesPath);
                     sw.WriteLine("npm update");
                 }
             }
         }
-        
+
         private void InstallServer_OnClick(object sender, RoutedEventArgs e)
         {
             Process p1 = new Process();
             Process p2 = new Process();
-            
+
             ProcessStartInfo cmdShell = new ProcessStartInfo();
             cmdShell.FileName = "cmd.exe";
             cmdShell.RedirectStandardInput = true;
             cmdShell.UseShellExecute = false;
-            
+
             ProcessStartInfo powershellShell = new ProcessStartInfo();
             powershellShell.FileName = "powershell.exe";
             powershellShell.RedirectStandardInput = true;
@@ -149,8 +149,9 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
+                    sw.WriteLine("del /f h1z1-server-QuickStart-master.zip"); // just in case of corrupted archive
                     sw.WriteLine("rd /s /q H1emuServersFiles");
-                    sw.WriteLine("curl -LJO -H 'Cache-Control: no-cache' --output h1z1-server-QuickStart-master.zip " + ServerFilesRepo +"?"+ new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl -LJO --output h1z1-server-QuickStart-master.zip " + ServerFilesRepo + "?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
 
 
                 }
@@ -174,8 +175,8 @@ namespace H1Z1_server
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("cd "+ServerFilesPath);
-                    sw.WriteLine("npm ci");                   
+                    sw.WriteLine("cd " + ServerFilesPath);
+                    sw.WriteLine("npm ci");
                 }
             }
         }

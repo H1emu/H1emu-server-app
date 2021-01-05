@@ -10,9 +10,9 @@ using System.Windows;
 [assembly: AssemblyTitle("H1emu")]
 [assembly: AssemblyDescription("Desktop app to run h1z1 servers")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("Gruber Quentin")]
+[assembly: AssemblyCompany("H1emu community")]
 [assembly: AssemblyProduct("H1emu")]
-[assembly: AssemblyCopyright("Copyright (C) 2020  Quentin Gruber")]
+[assembly: AssemblyCopyright("Copyright (C) 2021 H1emu community")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -51,5 +51,5 @@ using System.Windows;
 // You can specify all the values or you can default the Build and Revision Numbers
 // by using the '*' as shown below:
 // [assembly: AssemblyVersion("1.0.*")]
-[assembly: AssemblyVersion("1.2.1.0")]
-[assembly: AssemblyFileVersion("1.2.1.0")]
+[assembly: AssemblyVersion("1.2.2.0")]
+[assembly: AssemblyFileVersion("1.2.2.0")]
