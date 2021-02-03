@@ -55,8 +55,8 @@ namespace H1Z1_server
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("cd /temp");
-                    sw.WriteLine("curl -LJO https://nodejs.org/dist/v12.18.0/node-v12.18.0-x64.msi");
-                    sw.WriteLine("node-v12.18.0-x64.msi");
+                    sw.WriteLine("curl -LJO https://nodejs.org/dist/v14.15.4/node-v14.15.4-x64.msi");
+                    sw.WriteLine("node-v14.15.4-x64.msi");
                 }
             }
         }
