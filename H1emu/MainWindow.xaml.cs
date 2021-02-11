@@ -10,10 +10,22 @@ namespace H1Z1_server
     /// </summary>
     public partial class MainWindow
     {
+        ProcessStartInfo cmdShell;
+        ProcessStartInfo powershellShell;
         public MainWindow()
         {
             InitializeComponent();
+            this.cmdShell = new ProcessStartInfo();
+            cmdShell.FileName = "cmd.exe";
+            cmdShell.RedirectStandardInput = true;
+            cmdShell.UseShellExecute = false;
+
+            this.powershellShell = new ProcessStartInfo();
+            powershellShell.FileName = "powershell.exe";
+            powershellShell.RedirectStandardInput = true;
+            powershellShell.UseShellExecute = false;
         }
+
 
         private string ServerFilesPath = "./H1emuServersFiles/h1z1-server-QuickStart-master";
         private string ServerFilesRepo = "https://github.com/H1emu/h1z1-server-QuickStart/archive/master.zip";
@@ -21,12 +33,8 @@ namespace H1Z1_server
         private void LaunchServer_OnClick(object sender, RoutedEventArgs e)
         {
             Process p = new Process();
-            ProcessStartInfo info = new ProcessStartInfo();
-            info.FileName = "cmd.exe";
-            info.RedirectStandardInput = true;
-            info.UseShellExecute = false;
 
-            p.StartInfo = info;
+            p.StartInfo = cmdShell;
             p.Start();
 
             using (StreamWriter sw = p.StandardInput)
@@ -42,12 +50,8 @@ namespace H1Z1_server
         private void InstallNodejs_OnClick(object sender, RoutedEventArgs e)
         {
             Process p = new Process();
-            ProcessStartInfo info = new ProcessStartInfo();
-            info.FileName = "cmd.exe";
-            info.RedirectStandardInput = true;
-            info.UseShellExecute = false;
 
-            p.StartInfo = info;
+            p.StartInfo = cmdShell;
             p.Start();
 
             using (StreamWriter sw = p.StandardInput)
@@ -64,12 +68,8 @@ namespace H1Z1_server
         private void ApplyPatch_OnClick(object sender, RoutedEventArgs e)
         {
             Process p = new Process();
-            ProcessStartInfo info = new ProcessStartInfo();
-            info.FileName = "cmd.exe";
-            info.RedirectStandardInput = true;
-            info.UseShellExecute = false;
 
-            p.StartInfo = info;
+            p.StartInfo = cmdShell;
             p.Start();
 
             using (StreamWriter sw = p.StandardInput)
@@ -89,12 +89,8 @@ namespace H1Z1_server
         private void LaunchH1Z1_OnClick(object sender, RoutedEventArgs e)
         {
             Process p = new Process();
-            ProcessStartInfo info = new ProcessStartInfo();
-            info.FileName = "cmd.exe";
-            info.RedirectStandardInput = true;
-            info.UseShellExecute = false;
 
-            p.StartInfo = info;
+            p.StartInfo = cmdShell;
             p.Start();
 
             using (StreamWriter sw = p.StandardInput)
@@ -106,15 +102,13 @@ namespace H1Z1_server
             }
         }
 
-        private void UpdtServer_OnClick(object sender, RoutedEventArgs e)
+        private void InstallLatest_OnClick(object sender, RoutedEventArgs e)
         {
+            InstallServer();
+         
             Process p = new Process();
-            ProcessStartInfo info = new ProcessStartInfo();
-            info.FileName = "cmd.exe";
-            info.RedirectStandardInput = true;
-            info.UseShellExecute = false;
 
-            p.StartInfo = info;
+            p.StartInfo = cmdShell;
             p.Start();
 
             using (StreamWriter sw = p.StandardInput)
@@ -122,25 +116,14 @@ namespace H1Z1_server
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("cd " + ServerFilesPath);
-                    sw.WriteLine("npm update");
+                    sw.WriteLine("npm i h1z1-server@latest");
                 }
             }
         }
 
-        private void InstallServer_OnClick(object sender, RoutedEventArgs e)
+        private void InstallServer()
         {
             Process p1 = new Process();
-            Process p2 = new Process();
-
-            ProcessStartInfo cmdShell = new ProcessStartInfo();
-            cmdShell.FileName = "cmd.exe";
-            cmdShell.RedirectStandardInput = true;
-            cmdShell.UseShellExecute = false;
-
-            ProcessStartInfo powershellShell = new ProcessStartInfo();
-            powershellShell.FileName = "powershell.exe";
-            powershellShell.RedirectStandardInput = true;
-            powershellShell.UseShellExecute = false;
 
             p1.StartInfo = cmdShell;
             p1.Start();
@@ -157,6 +140,9 @@ namespace H1Z1_server
                 }
             }
             p1.WaitForExit();
+
+            Process p2 = new Process();
+
             p2.StartInfo = powershellShell;
             p2.Start();
 
@@ -168,7 +154,15 @@ namespace H1Z1_server
                 }
             }
             p2.WaitForExit();
+        }
+        private void InstallStable_OnClick(object sender, RoutedEventArgs e)
+        {
 
+            InstallServer();
+
+            Process p1 = new Process();
+
+            p1.StartInfo = cmdShell;
             p1.Start();
 
             using (StreamWriter sw = p1.StandardInput)
