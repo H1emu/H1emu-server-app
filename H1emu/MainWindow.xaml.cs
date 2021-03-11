@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Diagnostics;
 using System.IO;
-using System.Windows;
-using System.Reflection;
 using System.Net.Http;
+using System.Reflection;
 using System.Threading.Tasks;
-using Newtonsoft.Json.Linq;
+using System.Windows;
 
 namespace H1emu
 {
@@ -45,8 +45,7 @@ namespace H1emu
                 response.EnsureSuccessStatusCode();
                 string responseBody = await response.Content.ReadAsStringAsync();
                 String LatestOnlineVersion = JObject.Parse(responseBody).SelectToken("tag_name").ToString().TrimStart('v');
-                Console.WriteLine(LatestOnlineVersion);
-                if(localeVersion != LatestOnlineVersion)
+                if (localeVersion != LatestOnlineVersion)
                 {
                     new UpdateWindow().Show();
                 }
@@ -137,7 +136,7 @@ namespace H1emu
         private void InstallLatest_OnClick(object sender, RoutedEventArgs e)
         {
             InstallServer();
-         
+
             Process p = new Process();
 
             p.StartInfo = cmdShell;
