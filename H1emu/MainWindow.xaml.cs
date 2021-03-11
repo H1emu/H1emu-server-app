@@ -2,8 +2,12 @@
 using System.Diagnostics;
 using System.IO;
 using System.Windows;
+using System.Reflection;
+using System.Net.Http;
+using System.Threading.Tasks;
+using Newtonsoft.Json.Linq;
 
-namespace H1Z1_server
+namespace H1emu
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml
@@ -24,6 +28,34 @@ namespace H1Z1_server
             powershellShell.FileName = "powershell.exe";
             powershellShell.RedirectStandardInput = true;
             powershellShell.UseShellExecute = false;
+            string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
+            String localVersion = version.TrimEnd('0').TrimEnd('.');
+            GetLatestOnlineVersion(localVersion);
+        }
+
+        static readonly HttpClient client = new HttpClient();
+
+        static async Task GetLatestOnlineVersion(String localeVersion)
+        {
+            var _UserAgent = "d-fens HttpClient";
+            client.DefaultRequestHeaders.Add("User-Agent", _UserAgent);
+            try
+            {
+                HttpResponseMessage response = await client.GetAsync("https://api.github.com/repos/H1emu/H1emu-server-app/releases/latest");
+                response.EnsureSuccessStatusCode();
+                string responseBody = await response.Content.ReadAsStringAsync();
+                String LatestOnlineVersion = JObject.Parse(responseBody).SelectToken("tag_name").ToString().TrimStart('v');
+                Console.WriteLine(LatestOnlineVersion);
+                if(localeVersion != LatestOnlineVersion)
+                {
+                    new UpdateWindow().Show();
+                }
+            }
+            catch (HttpRequestException e)
+            {
+                Console.WriteLine("\nException Caught!");
+                Console.WriteLine("Message :{0} ", e.Message);
+            }
         }
 
 
