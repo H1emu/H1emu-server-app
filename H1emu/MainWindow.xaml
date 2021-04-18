@@ -5,7 +5,7 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:local="clr-namespace:H1emu"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    Title="H1emu v1.4.0"
+    Title="H1emu v1.5.0"
     Width="800"
     Height="550"
     Icon="img/EmuIco_By_ZamZam.ico"
@@ -62,11 +62,16 @@
             <Button
                 Margin="0,20,0,0"
                 Padding="5,10,5,10"
-                Click="ApplyPatch_OnClick"
+                Click="ApplyPatch2015_OnClick"
                 FontFamily="Unispace"
-                FontSize="18">
-                Apply Patch
-            </Button>
+                FontSize="18" Content="Apply 2015 Patch"/>
+            <Button
+                IsEnabled="False"
+                Margin="0,20,0,0"
+                Padding="5,10,5,10"
+                Click="ApplyPatch2016_OnClick"
+                FontFamily="Unispace"
+                FontSize="18" Content="Apply 2016 Patch"/>
             <Button
                 Margin="0,20,0,0"
                 Padding="5,10,5,10"
@@ -92,11 +97,16 @@
             <Button
                 Margin="0,20,0,0"
                 Padding="5,10,5,10"
-                Click="LaunchServer_OnClick"
+                Click="LaunchServer2015_OnClick"
                 FontFamily="Unispace"
-                FontSize="18">
-                Launch Solo Server
-            </Button>
+                FontSize="18" Content="Launch 2015 Solo Server"/>
+            <Button
+                IsEnabled="False"
+                Margin="0,20,0,0"
+                Padding="5,10,5,10"
+                Click="LaunchServer2016_OnClick"
+                FontFamily="Unispace"
+                FontSize="18" Content="Launch 2016 Solo Server"/>
             <Button
                 Margin="0,20,0,0"
                 Padding="5,10,5,10"
