@@ -69,7 +69,7 @@ namespace H1emu
             info.RedirectStandardInput = true;
             info.UseShellExecute = false;
 
-            p.StartInfo = info;
+            p.StartInfo = cmdShell;
             p.Start();
 
             using (StreamWriter sw = p.StandardInput)
