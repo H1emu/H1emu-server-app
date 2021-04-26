@@ -8,7 +8,7 @@
     Title="H1emu v1.5.0"
     Width="800"
     Height="550"
-    Icon="img/EmuIco_By_ZamZam.ico"
+    Icon="img/icon.png"
     ResizeMode="CanMinimize"
     WindowStartupLocation="CenterScreen"
     mc:Ignorable="d">
