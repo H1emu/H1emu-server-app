@@ -224,7 +224,6 @@ namespace H1emu
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("del /f h1z1-server-QuickStart-master.zip"); // just in case of corrupted archive
-                    sw.WriteLine("del /f H1emuServersFiles");
                     sw.WriteLine("rd /s /q H1emuServersFiles");
                     sw.WriteLine("curl -LJO --output h1z1-server-QuickStart-master.zip " + ServerFilesRepo + "?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
 
