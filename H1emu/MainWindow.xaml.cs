@@ -192,6 +192,41 @@ namespace H1emu
             }
         }
 
+
+        private void installNodejsStandalone()
+        {
+            Process p1 = new Process();
+
+            p1.StartInfo = cmdShell;
+            p1.Start();
+
+            using (StreamWriter sw = p1.StandardInput)
+            {
+                if (sw.BaseStream.CanWrite)
+                {
+                    sw.WriteLine("cd ./H1emuServersFiles/h1z1-server-QuickStart-master");
+                    sw.WriteLine("curl --output node.zip https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/node.zip?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+
+
+                }
+            }
+            p1.WaitForExit();
+            Process p2 = new Process();
+
+            p2.StartInfo = powershellShell;
+            p2.Start();
+
+            using (StreamWriter sw = p2.StandardInput)
+            {
+                if (sw.BaseStream.CanWrite)
+                {
+                    sw.WriteLine("Expand-Archive ./H1emuServersFiles/h1z1-server-QuickStart-master/node.zip ./H1emuServersFiles/h1z1-server-QuickStart-master");
+                    sw.WriteLine("del /f ./H1emuServersFiles/h1z1-server-QuickStart-master/node.zip");
+                }
+            }
+            p2.WaitForExit();
+        }
+
         private void InstallServer()
         {
             Process p1 = new Process();
@@ -222,9 +257,12 @@ namespace H1emu
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("Expand-Archive h1z1-server-QuickStart-master.zip H1emuServersFiles");
+                    sw.WriteLine("del /f h1z1-server-QuickStart-master.zip");
                 }
             }
             p2.WaitForExit();
+
+            installNodejsStandalone();
         }
         private void InstallStable_OnClick(object sender, RoutedEventArgs e)
         {
@@ -241,7 +279,7 @@ namespace H1emu
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("cd " + ServerFilesPath);
-                    sw.WriteLine("npm ci");
+                    sw.WriteLine("npm i");
                 }
             }
         }
