@@ -99,23 +99,6 @@ namespace H1emu
             }
         }
 
-        private void InstallNodejs_OnClick(object sender, RoutedEventArgs e)
-        {
-            Process p = new Process();
-
-            p.StartInfo = cmdShell;
-            p.Start();
-
-            using (StreamWriter sw = p.StandardInput)
-            {
-                if (sw.BaseStream.CanWrite)
-                {
-                    sw.WriteLine("cd /temp");
-                    sw.WriteLine("curl -LJO https://nodejs.org/dist/v14.15.4/node-v14.15.4-x64.msi");
-                    sw.WriteLine("node-v14.15.4-x64.msi");
-                }
-            }
-        }
 
         private void ApplyPatch2015_OnClick(object sender, RoutedEventArgs e)
         {
