@@ -2,6 +2,7 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Compression;
 using System.Net.Http;
 using System.Reflection;
 using System.Threading.Tasks;
@@ -16,6 +17,7 @@ namespace H1emu
     {
         ProcessStartInfo cmdShell;
         ProcessStartInfo powershellShell;
+        string currentDirectory;
         public MainWindow()
         {
             InitializeComponent();
@@ -31,6 +33,7 @@ namespace H1emu
             string version = Assembly.GetExecutingAssembly().GetName().Version.ToString();
             String localVersion = version.TrimEnd('0').TrimEnd('.');
             GetLatestOnlineVersion(localVersion);
+            this.currentDirectory = Directory.GetCurrentDirectory();
         }
 
         static readonly HttpClient client = new HttpClient();
@@ -189,21 +192,20 @@ namespace H1emu
                 {
                     sw.WriteLine("cd ./H1emuServersFiles/h1z1-server-QuickStart-master");
                     sw.WriteLine("curl --output node.zip https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/node.zip?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-
-
                 }
             }
             p1.WaitForExit();
+            ZipFile.ExtractToDirectory($"{this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node.zip", $"{this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master");
+
             Process p2 = new Process();
 
-            p2.StartInfo = powershellShell;
+            p2.StartInfo = cmdShell;
             p2.Start();
 
             using (StreamWriter sw = p2.StandardInput)
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("Expand-Archive ./H1emuServersFiles/h1z1-server-QuickStart-master/node.zip ./H1emuServersFiles/h1z1-server-QuickStart-master");
                     sw.WriteLine("del /f ./H1emuServersFiles/h1z1-server-QuickStart-master/node.zip");
                 }
             }
@@ -222,6 +224,7 @@ namespace H1emu
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("del /f h1z1-server-QuickStart-master.zip"); // just in case of corrupted archive
+                    sw.WriteLine("del /f H1emuServersFiles");
                     sw.WriteLine("rd /s /q H1emuServersFiles");
                     sw.WriteLine("curl -LJO --output h1z1-server-QuickStart-master.zip " + ServerFilesRepo + "?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
 
@@ -229,22 +232,7 @@ namespace H1emu
                 }
             }
             p1.WaitForExit();
-
-            Process p2 = new Process();
-
-            p2.StartInfo = powershellShell;
-            p2.Start();
-
-            using (StreamWriter sw = p2.StandardInput)
-            {
-                if (sw.BaseStream.CanWrite)
-                {
-                    sw.WriteLine("Expand-Archive h1z1-server-QuickStart-master.zip H1emuServersFiles");
-                    sw.WriteLine("del /f h1z1-server-QuickStart-master.zip");
-                }
-            }
-            p2.WaitForExit();
-
+            ZipFile.ExtractToDirectory($"{this.currentDirectory}/h1z1-server-QuickStart-master.zip", $"{this.currentDirectory}/H1emuServersFiles");
             installNodejsStandalone();
         }
         private void InstallStable_OnClick(object sender, RoutedEventArgs e)
