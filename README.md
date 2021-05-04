@@ -10,7 +10,7 @@
 3. Open the "H1emu.exe" file.
 (If you get Windows Protected your PC Message) then click "More Info" and then "Run Anyway".
 4. Press "Apply Patch".
-5. Press "Install Servers Files" and wait till the CMD Prompt closes.
+5. Press "Install Servers Files" (Latest or Stable) and wait till the CMD Prompt closes.
 6. Press "Launch Solo Server" and when you see multicolor logs then you can open H1Z1.
 7. Press "Launch H1Z1.exe" to launch the game.
 
