@@ -228,9 +228,9 @@ namespace H1Emu
             // 
             this.copyrightLabel.Font = new System.Drawing.Font("Carrinady", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightLabel.ForeColor = System.Drawing.Color.Black;
-            this.copyrightLabel.Location = new System.Drawing.Point(79, 637);
+            this.copyrightLabel.Location = new System.Drawing.Point(79, 633);
             this.copyrightLabel.Name = "copyrightLabel";
-            this.copyrightLabel.Size = new System.Drawing.Size(318, 23);
+            this.copyrightLabel.Size = new System.Drawing.Size(318, 41);
             this.copyrightLabel.TabIndex = 4;
             this.copyrightLabel.Text = "Copyright © 2021 H1emu Community";
             this.copyrightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;

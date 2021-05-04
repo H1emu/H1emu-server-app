@@ -66,7 +66,7 @@ namespace H1Emu
             checkVersion();
 
             joinCommunityLabel.Font = new Font(pfc.Families[0], 22);
-            copyrightLabel.Font = new Font(pfc.Families[0], 10);
+            copyrightLabel.Font = new Font(pfc.Families[0], 15);
             filler.BackColor = Color.FromArgb(66, 66, 66);
         }
 
