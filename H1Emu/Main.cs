@@ -9,11 +9,13 @@ using System.IO.Compression;
 using System.Reflection;
 using Newtonsoft.Json;
 using System.Net;
+using System.Drawing.Text;
 
 namespace H1Emu
 {
     public partial class Main : MaterialForm
     {
+        PrivateFontCollection pfc = new PrivateFontCollection();
         ProcessStartInfo cmdShell;
         string currentDirectory;
         string localVersion;
@@ -45,13 +47,26 @@ namespace H1Emu
                 System.Windows.Forms.Application.Exit();
             }
 
+            Stream fontStream = this.GetType().Assembly.GetManifestResourceStream("H1Emu.Carrinady.ttf");
+            byte[] fontData = new byte[fontStream.Length];
+            fontStream.Read(fontData, 0, (int)fontStream.Length);
+            fontStream.Close();
+
+            unsafe
+            {
+                fixed (byte* pFontData = fontData)
+                {
+                    pfc.AddMemoryFont((System.IntPtr)pFontData, fontData.Length);
+                }
+            }
+
             localVersion = Assembly.GetExecutingAssembly().GetName().Version.ToString().TrimEnd('0').TrimEnd('.');
             this.Text = $"H1Emu - {localVersion}";
 
             checkVersion();
 
-            joinCommunityLabel.Font = new Font("Carrinady", 22);
-            copyrightLabel.Font = new Font("Carrinady", 12);
+            joinCommunityLabel.Font = new Font(pfc.Families[0], 22);
+            copyrightLabel.Font = new Font(pfc.Families[0], 10);
             filler.BackColor = Color.FromArgb(66, 66, 66);
         }
 

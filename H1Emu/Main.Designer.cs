@@ -215,24 +215,26 @@ namespace H1Emu
             this.joinCommunityLabel.BackColor = System.Drawing.SystemColors.Control;
             this.joinCommunityLabel.Font = new System.Drawing.Font("Carrinady", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.joinCommunityLabel.ForeColor = System.Drawing.Color.Black;
-            this.joinCommunityLabel.Location = new System.Drawing.Point(6, 595);
+            this.joinCommunityLabel.Location = new System.Drawing.Point(6, 606);
             this.joinCommunityLabel.Name = "joinCommunityLabel";
-            this.joinCommunityLabel.Size = new System.Drawing.Size(464, 33);
+            this.joinCommunityLabel.Size = new System.Drawing.Size(464, 35);
             this.joinCommunityLabel.TabIndex = 3;
             this.joinCommunityLabel.Text = "Join the community at H1emu.com";
             this.joinCommunityLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.joinCommunityLabel.UseCompatibleTextRendering = true;
             this.joinCommunityLabel.Click += new System.EventHandler(this.joinCommunityLabel_Click);
             // 
             // copyrightLabel
             // 
             this.copyrightLabel.Font = new System.Drawing.Font("Carrinady", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightLabel.ForeColor = System.Drawing.Color.Black;
-            this.copyrightLabel.Location = new System.Drawing.Point(79, 630);
+            this.copyrightLabel.Location = new System.Drawing.Point(79, 637);
             this.copyrightLabel.Name = "copyrightLabel";
             this.copyrightLabel.Size = new System.Drawing.Size(318, 23);
             this.copyrightLabel.TabIndex = 4;
             this.copyrightLabel.Text = "Copyright © 2021 H1emu Community";
             this.copyrightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.copyrightLabel.UseCompatibleTextRendering = true;
             // 
             // filler
             // 
@@ -246,7 +248,7 @@ namespace H1Emu
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.Control;
-            this.ClientSize = new System.Drawing.Size(474, 692);
+            this.ClientSize = new System.Drawing.Size(474, 685);
             this.Controls.Add(this.filler);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.copyrightLabel);

@@ -96,7 +96,7 @@ namespace H1Emu
             // 
             // update
             // 
-            this.update.Location = new System.Drawing.Point(14, 3);
+            this.update.Location = new System.Drawing.Point(18, 3);
             this.update.Name = "update";
             this.update.Size = new System.Drawing.Size(268, 45);
             this.update.TabIndex = 6;
