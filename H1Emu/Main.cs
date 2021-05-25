@@ -19,6 +19,7 @@ namespace H1Emu
         ProcessStartInfo cmdShell;
         string currentDirectory;
         string localVersion;
+        string nodeVersion;
 
         public Main()
         {
@@ -34,6 +35,8 @@ namespace H1Emu
             cmdShell.UseShellExecute = false;
 
             this.currentDirectory = Directory.GetCurrentDirectory();
+            this.nodeVersion = "16.2.0";
+
         }
 
         private string ServerFilesPath = "./H1emuServersFiles/h1z1-server-QuickStart-master";
@@ -93,7 +96,6 @@ namespace H1Emu
         private void InstallLatest_Click(object sender, EventArgs e)
         {
             InstallServer();
-
             Process p = new Process();
 
             p.StartInfo = cmdShell;
@@ -103,6 +105,7 @@ namespace H1Emu
             {
                 if (sw.BaseStream.CanWrite)
                 {
+                    sw.WriteLine($"SET PATH={this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node-v{this.nodeVersion}-win-x64");
                     sw.WriteLine("cd " + ServerFilesPath);
                     sw.WriteLine("npm i h1z1-server@latest");
                 }
@@ -122,6 +125,7 @@ namespace H1Emu
             {
                 if (sw.BaseStream.CanWrite)
                 {
+                    sw.WriteLine($"SET PATH={this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node-v{this.nodeVersion}-win-x64");
                     sw.WriteLine("cd " + ServerFilesPath);
                     sw.WriteLine("npm i");
                 }
@@ -139,6 +143,7 @@ namespace H1Emu
             {
                 if (sw.BaseStream.CanWrite)
                 {
+                    sw.WriteLine($"SET PATH={this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node-v{this.nodeVersion}-win-x64");
                     sw.WriteLine("cd " + ServerFilesPath);
                     sw.WriteLine("npm start");
                 }
@@ -199,15 +204,14 @@ namespace H1Emu
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("cd ./H1emuServersFiles/h1z1-server-QuickStart-master");
-                    sw.WriteLine("curl --output node.zip https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/node.zip?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine($"curl --output node-v{this.nodeVersion}-win-x64.zip https://nodejs.org/dist/v{nodeVersion}/node-v{nodeVersion}-win-x64.zip?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
                 }
             }
 
             p1.WaitForExit();
 
-            ZipFile.ExtractToDirectory($"{this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node.zip", $"{this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master");
-
-            File.Delete("./H1emuServersFiles/h1z1-server-QuickStart-master/node.zip");
+            ZipFile.ExtractToDirectory($"{this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node-v{this.nodeVersion}-win-x64.zip", $"{this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master");
+            File.Delete($"./H1emuServersFiles/h1z1-server-QuickStart-master/node-v{this.nodeVersion}-win-x64.zip");
             File.Delete("h1z1-server-QuickStart-master.zip");
         }
 
