@@ -84,13 +84,12 @@ namespace H1Emu
             {
                 if (sw.BaseStream.CanWrite)
                 {
-                    sw.WriteLine("curl --output dinput8.dll https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/dinput8.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl --output msvcp140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/msvcp140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl --output ucrtbased.dll https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/ucrtbased.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl --output vcruntime140_1d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/vcruntime140_1d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
-                    sw.WriteLine("curl --output vcruntime140d.dll https://h1emu.s3.eu-west-3.amazonaws.com/patches/15jan2015/vcruntime140d.dll?" + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl -L --output H1emu_patch.zip https://github.com/H1emu/h1emu-patch/releases/latest/download/H1emu_patch.zip? " + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
                 }
             }
+            p.WaitForExit();
+            ZipFile.ExtractToDirectory($"{this.currentDirectory}/H1emu_patch.zip", $"{this.currentDirectory}");
+            File.Delete($"{ this.currentDirectory}/H1emu_patch.zip");
         }
 
         private void InstallLatest_Click(object sender, EventArgs e)
