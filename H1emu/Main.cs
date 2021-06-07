@@ -211,7 +211,7 @@ namespace H1Emu
                     startCmd = "npm start";
                     break;
                 case "22dec2016":
-                    startCmd = "npm start-2016";
+                    startCmd = "npm run start-2016";
                     break;
             }
 
