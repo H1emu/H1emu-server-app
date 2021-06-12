@@ -135,7 +135,7 @@ namespace H1Emu
                 if (sw.BaseStream.CanWrite)
                 {
                     sw.WriteLine("del /q BattlEye H1Z1_BE.exe dinput8.dll msvcp140d.dll ucrtbased.dll vcruntime140_1d.dll vcruntime140d.dll");
-                    sw.WriteLine("curl -L --output H1emu_patch.zip https://github.com/H1emu/h1emu-patch/releases/latest/download/H1emu_patch.zip? " + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
+                    sw.WriteLine("curl -L --output H1emu_patch.zip https://github.com/H1emu/h1emu-patch-2016/releases/latest/download/H1emu_patch.zip? " + new DateTimeOffset(DateTime.UtcNow).ToUnixTimeSeconds());
                 }
             }
             p.WaitForExit();
