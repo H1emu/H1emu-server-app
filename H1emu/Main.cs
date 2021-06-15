@@ -242,6 +242,24 @@ namespace H1Emu
             }
         }
 
+        private void connectToPlayTest(object sender, EventArgs e)
+        {
+            if (this.gameVersion == "15janv2015") {
+                Process p = new Process();
+
+                p.StartInfo = cmdShell;
+                p.Start();
+
+                using (StreamWriter sw = p.StandardInput)
+                {
+                    if (sw.BaseStream.CanWrite)
+                    {
+                        sw.WriteLine("H1Z1.exe sessionid=0 server=loginserver.h1emu.com:1115");
+                    }
+                }
+            }
+        }
+
         private void InstallServer()
         {
             Process p1 = new Process();

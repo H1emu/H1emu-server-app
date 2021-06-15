@@ -37,6 +37,7 @@ namespace H1Emu
             this.installStable = new MaterialSkin.Controls.MaterialButton();
             this.applyPatch = new MaterialSkin.Controls.MaterialButton();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.materialButton1 = new MaterialSkin.Controls.MaterialButton();
             this.launchH1z1 = new MaterialSkin.Controls.MaterialButton();
             this.launchServers = new MaterialSkin.Controls.MaterialButton();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -149,6 +150,7 @@ namespace H1Emu
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.materialButton1);
             this.tabPage2.Controls.Add(this.launchH1z1);
             this.tabPage2.Controls.Add(this.launchServers);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
@@ -159,6 +161,26 @@ namespace H1Emu
             this.tabPage2.Text = "Play";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // materialButton1
+            // 
+            this.materialButton1.AutoSize = false;
+            this.materialButton1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.materialButton1.Depth = 0;
+            this.materialButton1.DrawShadows = true;
+            this.materialButton1.HighEmphasis = true;
+            this.materialButton1.Icon = null;
+            this.materialButton1.Location = new System.Drawing.Point(72, 206);
+            this.materialButton1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.materialButton1.MouseState = MaterialSkin.MouseState.HOVER;
+            this.materialButton1.Name = "materialButton1";
+            this.materialButton1.Size = new System.Drawing.Size(315, 56);
+            this.materialButton1.TabIndex = 3;
+            this.materialButton1.Text = "Connect to H1emu test server";
+            this.materialButton1.Type = MaterialSkin.Controls.MaterialButton.MaterialButtonType.Contained;
+            this.materialButton1.UseAccentColor = false;
+            this.materialButton1.UseVisualStyleBackColor = true;
+            this.materialButton1.Click += new System.EventHandler(this.connectToPlayTest);
+            // 
             // launchH1z1
             // 
             this.launchH1z1.AutoSize = false;
@@ -167,7 +189,7 @@ namespace H1Emu
             this.launchH1z1.DrawShadows = true;
             this.launchH1z1.HighEmphasis = true;
             this.launchH1z1.Icon = null;
-            this.launchH1z1.Location = new System.Drawing.Point(72, 171);
+            this.launchH1z1.Location = new System.Drawing.Point(72, 127);
             this.launchH1z1.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.launchH1z1.MouseState = MaterialSkin.MouseState.HOVER;
             this.launchH1z1.Name = "launchH1z1";
@@ -187,7 +209,7 @@ namespace H1Emu
             this.launchServers.DrawShadows = true;
             this.launchServers.HighEmphasis = true;
             this.launchServers.Icon = null;
-            this.launchServers.Location = new System.Drawing.Point(72, 60);
+            this.launchServers.Location = new System.Drawing.Point(72, 38);
             this.launchServers.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.launchServers.MouseState = MaterialSkin.MouseState.HOVER;
             this.launchServers.Name = "launchServers";
@@ -213,7 +235,7 @@ namespace H1Emu
             // joinCommunityLabel
             // 
             this.joinCommunityLabel.BackColor = System.Drawing.SystemColors.Control;
-            this.joinCommunityLabel.Font = new System.Drawing.Font("Carrinady", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.joinCommunityLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.joinCommunityLabel.ForeColor = System.Drawing.Color.Black;
             this.joinCommunityLabel.Location = new System.Drawing.Point(6, 606);
             this.joinCommunityLabel.Name = "joinCommunityLabel";
@@ -226,7 +248,7 @@ namespace H1Emu
             // 
             // copyrightLabel
             // 
-            this.copyrightLabel.Font = new System.Drawing.Font("Carrinady", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.copyrightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.copyrightLabel.ForeColor = System.Drawing.Color.Black;
             this.copyrightLabel.Location = new System.Drawing.Point(79, 633);
             this.copyrightLabel.Name = "copyrightLabel";
@@ -286,6 +308,7 @@ namespace H1Emu
         public System.Windows.Forms.Label joinCommunityLabel;
         public System.Windows.Forms.Label copyrightLabel;
         private System.Windows.Forms.Panel filler;
+        private MaterialSkin.Controls.MaterialButton materialButton1;
     }
 }
 
