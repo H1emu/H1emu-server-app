@@ -38,7 +38,7 @@ namespace H1Emu
             cmdShell.UseShellExecute = false;
 
             this.currentDirectory = Directory.GetCurrentDirectory();
-            this.nodeVersion = "16.2.0";
+            this.nodeVersion = "16.4.1";
             this.gameVersion = "";
 
         }
