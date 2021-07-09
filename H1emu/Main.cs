@@ -171,7 +171,7 @@ namespace H1Emu
                 {
                     sw.WriteLine($"SET PATH={this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node-v{this.nodeVersion}-win-x64");
                     sw.WriteLine("cd " + ServerFilesPath);
-                    sw.WriteLine("npm i h1z1-server@latest");
+                    sw.WriteLine("npm i --production h1z1-server@latest");
                 }
             }
         }
@@ -191,7 +191,7 @@ namespace H1Emu
                 {
                     sw.WriteLine($"SET PATH={this.currentDirectory}/H1emuServersFiles/h1z1-server-QuickStart-master/node-v{this.nodeVersion}-win-x64");
                     sw.WriteLine("cd " + ServerFilesPath);
-                    sw.WriteLine("npm i");
+                    sw.WriteLine("npm i --production");
                 }
             }
         }
