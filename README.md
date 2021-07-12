@@ -2,6 +2,9 @@
 
 ## h1z1-server [![npm version](http://img.shields.io/npm/v/h1z1-server.svg?style=flat)](https://npmjs.org/package/h1z1-server "View this project on npm")
 
+## Deprecated
+   Since the 12/07/2021 h1emu-server-app is deprecated and no longer supported by h1emu, please use our new launcher:
+   https://github.com/H1emu/h1emu-launcher
 ## Thanks list
 
 - Thank to ZamZam for having made the design of the application >=1.6 as well as the various logos of H1emu.
